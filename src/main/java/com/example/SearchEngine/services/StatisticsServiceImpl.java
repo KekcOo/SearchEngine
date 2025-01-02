@@ -1,13 +1,13 @@
 package com.example.SearchEngine.services;
 
+import com.example.SearchEngine.config.Site;
+import com.example.SearchEngine.config.SitesList;
+import com.example.SearchEngine.dto.statistics.DetailedStatisticsItem;
+import com.example.SearchEngine.dto.statistics.StatisticsData;
+import com.example.SearchEngine.dto.statistics.StatisticsResponse;
+import com.example.SearchEngine.dto.statistics.TotalStatistics;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
-import searchengine.config.Site;
-import searchengine.config.SitesList;
-import searchengine.dto.statistics.DetailedStatisticsItem;
-import searchengine.dto.statistics.StatisticsData;
-import searchengine.dto.statistics.StatisticsResponse;
-import searchengine.dto.statistics.TotalStatistics;
 
 import java.util.ArrayList;
 import java.util.List;
