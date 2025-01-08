@@ -1,0 +1,24 @@
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/mydb
+    username: root
+    password: root
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    hibernate:
+      ddl-auto: create
+    show-sql: true
+
+indexing-settings:
+  responses:
+      userAgent: engineSearch/0.1
+      referrer: https://www.google.com
+      maxBodySize: 0
+
+  sites:
+    - url: https://www.playback.ru
+      name: PlayBack.ru
+    - url: https://ipfran.ru
+      name: ipfran.ru
+    - url: https://nikoartgallery.com
+      name: nikoartgallery.com

@@ -1,6 +1,6 @@
 package com.example.SearchEngine.services;
 
-import com.example.SearchEngine.config.Site;
+import com.example.SearchEngine.config.SiteConfig;
 import com.example.SearchEngine.config.SitesList;
 import com.example.SearchEngine.dto.statistics.DetailedStatisticsItem;
 import com.example.SearchEngine.dto.statistics.StatisticsData;
@@ -34,9 +34,9 @@ public class StatisticsServiceImpl implements StatisticsService {
         total.setIndexing(true);
 
         List<DetailedStatisticsItem> detailed = new ArrayList<>();
-        List<Site> sitesList = sites.getSites();
+        List<SiteConfig> sitesList = sites.getSites();
         for(int i = 0; i < sitesList.size(); i++) {
-            Site site = sitesList.get(i);
+            SiteConfig site = sitesList.get(i);
             DetailedStatisticsItem item = new DetailedStatisticsItem();
             item.setName(site.getName());
             item.setUrl(site.getUrl());
