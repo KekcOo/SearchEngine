@@ -21,6 +21,16 @@ configurations {
 
 repositories {
 	mavenCentral()
+	maven {
+		url = uri("https://gitlab.skillbox.ru/api/v4/projects/263574/packages/maven")
+		credentials(HttpHeaderCredentials::class) {
+			name = "Private-Token"
+			value = System.getenv("Private-Token")
+		}
+		authentication {
+			create<HttpHeaderAuthentication>("header")
+		}
+	}
 }
 
 dependencies {
@@ -33,6 +43,11 @@ dependencies {
 	annotationProcessor("org.projectlombok:lombok")
 	testImplementation("org.springframework.boot:spring-boot-starter-test")
 	testRuntimeOnly("org.junit.platform:junit-platform-launcher")
+	implementation("org.apache.lucene.morphology:morph:1.5")
+	implementation("org.apache.lucene.analysis:morphology:1.5")
+	implementation("org.apache.lucene.morphology:dictionary-reader:1.5")
+	implementation("org.apache.lucene.morphology:english:1.5")
+	implementation("org.apache.lucene.morphology:russian:1.5")
 
 }
 
