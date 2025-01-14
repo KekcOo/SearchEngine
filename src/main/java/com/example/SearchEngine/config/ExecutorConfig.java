@@ -17,4 +17,9 @@ public class ExecutorConfig {
     public ConnectionResponse connectionResponse() {
         return new ConnectionResponse();
     }
+    @Bean
+    public ExecutorService executorService(){
+        return Executors.newFixedThreadPool(Runtime.getRuntime().availableProcessors());
+    }
+
 }

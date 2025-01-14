@@ -34,6 +34,7 @@ public class LinkSearch extends RecursiveAction {
 
     private static final Map<String, Boolean> processedUrls = new ConcurrentHashMap<>();
 
+
     private static final Pattern URL_FILTER = Pattern.compile(
             "^https?://.*" +
                     "(?<!\\.(jpg|pdf|doc|jpeg|zip|image|png|gif|rtf|ppt|mpeg|avi" +
@@ -95,7 +96,11 @@ public class LinkSearch extends RecursiveAction {
         }
         try {
             Page page =  CreatorEntity.createPage(site,response,url);
-            dbExecutor.submit(() -> pageService.save(page));
+            dbExecutor.submit(() ->
+            {
+                pageService.save(page);
+
+            });
         } catch (Exception e) {
             log.error("Ошибка странице  {}: {}", url, e.getMessage());
         }
@@ -123,5 +128,6 @@ public class LinkSearch extends RecursiveAction {
         }
 
     }
+
 
 }
